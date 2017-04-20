@@ -12,19 +12,16 @@
     <div v-text="count * 10"></div>
     <div v-text="'(' + count + ')'"></div>
     <div v-text="count ? count : '--'"></div>
-    <button v-on:click="countUp">Up</button>
+    <button v-on:click="count++">Up</button>
   </div>
 
   <script src="./vue.min.js"></script>
   <script>
-    var vm = new Vue({
+  // vmという変数に入れる理由は？
+    vm = new Vue({
       el: '#mycounter',
       data: {
         count: 0
-      },
-      methods: {
-        countUp: function() {
-          this.count++;        }
       }
     })
   </script>
