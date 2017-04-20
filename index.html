@@ -5,10 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .red { color: red; }
+    .bold { font-weight: bold; }
+  </style>
 </head>
 <body>
   <div id="myapp">
-    <div v-if="showContent">
+    <div :class="{red: isRed, bold: isBold}">
       {{content}}
     </div>
   </div>
@@ -20,7 +24,8 @@
       el: '#myapp',
       data: {
         content: 'hello world',
-        showContent: true
+        isRed: true,
+        isBold: true
       }
     })
   </script>
