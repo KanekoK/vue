@@ -7,21 +7,20 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="mycounter">
-    <div v-text="count"></div>
-    <div v-text="count * 10"></div>
-    <div v-text="'(' + count + ')'"></div>
-    <div v-text="count ? count : '--'"></div>
-    <button v-on:click="count++">Up</button>
+  <div id="myapp">
+    <div v-if="showContent">
+      {{content}}
+    </div>
   </div>
 
   <script src="./vue.min.js"></script>
   <script>
   // vmという変数に入れる理由は？
     vm = new Vue({
-      el: '#mycounter',
+      el: '#myapp',
       data: {
-        count: 0
+        content: 'hello world',
+        showContent: true
       }
     })
   </script>
