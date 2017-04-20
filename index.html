@@ -12,9 +12,15 @@
 </head>
 <body>
   <div id="myapp">
-    <div :class="{red: isRed, bold: isBold}">
-      {{content}}
-    </div>
+    <ul>
+      <li v-for="d in d1">{{ d }}</li>
+    </ul>
+    <ul>
+      <li v-for="(k, d) in d2">{{ k }} - {{ d }}</li>
+    </ul>
+    <ul>
+      <li v-for="(d, index) in d3">{{ index }} {{ d.name }} - {{ d.score }}</li>
+    </ul>
   </div>
 
   <script src="./vue.min.js"></script>
@@ -23,9 +29,12 @@
     vm = new Vue({
       el: '#myapp',
       data: {
-        content: 'hello world',
-        isRed: true,
-        isBold: true
+        d1: ['a', 'b'],
+        d2: {k1: 'v1', k2: 'v2'},
+        d3: [
+          {name: 'taguchi', score: 62},
+          {name: 'fkoji', score: 84}
+        ]
       }
     })
   </script>
